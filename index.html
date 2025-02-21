@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키 값 표시</title>
+    <script>
+        // 쿠키 값을 가져오는 함수
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // 페이지가 로드될 때 쿠키 값을 alert로 표시
+        window.onload = function() {
+            const cookieValue = getCookie('yourCookieName'); // 'yourCookieName'을 원하는 쿠키 이름으로 변경
+            if (cookieValue) {
+                alert(`쿠키 값: ${cookieValue}`);
+            } else {
+                alert('쿠키가 존재하지 않습니다.');
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
