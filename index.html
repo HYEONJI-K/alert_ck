@@ -13,7 +13,6 @@
         // 쿠키 값을 표시하는 함수
         function displayCookies() {
             const cookies = getAllCookies();
-            const cookieDisplay = document.getElementById('cookieDisplay');
             if (cookies) {
                 cookieDisplay.textContent = `전체 쿠키: ${cookies}`;
             } else {
